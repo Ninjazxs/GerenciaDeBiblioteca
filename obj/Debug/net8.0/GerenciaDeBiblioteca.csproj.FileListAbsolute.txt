@@ -1,0 +1,14 @@
+C:\ProjetosDeEstudo_C#\GerenciaDeBiblioteca\bin\Debug\net8.0\GerenciaDeBiblioteca.exe
+C:\ProjetosDeEstudo_C#\GerenciaDeBiblioteca\bin\Debug\net8.0\GerenciaDeBiblioteca.deps.json
+C:\ProjetosDeEstudo_C#\GerenciaDeBiblioteca\bin\Debug\net8.0\GerenciaDeBiblioteca.runtimeconfig.json
+C:\ProjetosDeEstudo_C#\GerenciaDeBiblioteca\bin\Debug\net8.0\GerenciaDeBiblioteca.dll
+C:\ProjetosDeEstudo_C#\GerenciaDeBiblioteca\bin\Debug\net8.0\GerenciaDeBiblioteca.pdb
+C:\ProjetosDeEstudo_C#\GerenciaDeBiblioteca\obj\Debug\net8.0\GerenciaDeBiblioteca.GeneratedMSBuildEditorConfig.editorconfig
+C:\ProjetosDeEstudo_C#\GerenciaDeBiblioteca\obj\Debug\net8.0\GerenciaDeBiblioteca.AssemblyInfoInputs.cache
+C:\ProjetosDeEstudo_C#\GerenciaDeBiblioteca\obj\Debug\net8.0\GerenciaDeBiblioteca.AssemblyInfo.cs
+C:\ProjetosDeEstudo_C#\GerenciaDeBiblioteca\obj\Debug\net8.0\GerenciaDeBiblioteca.csproj.CoreCompileInputs.cache
+C:\ProjetosDeEstudo_C#\GerenciaDeBiblioteca\obj\Debug\net8.0\GerenciaDeBiblioteca.dll
+C:\ProjetosDeEstudo_C#\GerenciaDeBiblioteca\obj\Debug\net8.0\refint\GerenciaDeBiblioteca.dll
+C:\ProjetosDeEstudo_C#\GerenciaDeBiblioteca\obj\Debug\net8.0\GerenciaDeBiblioteca.pdb
+C:\ProjetosDeEstudo_C#\GerenciaDeBiblioteca\obj\Debug\net8.0\GerenciaDeBiblioteca.genruntimeconfig.cache
+C:\ProjetosDeEstudo_C#\GerenciaDeBiblioteca\obj\Debug\net8.0\ref\GerenciaDeBiblioteca.dll
