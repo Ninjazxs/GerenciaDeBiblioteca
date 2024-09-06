@@ -12,3 +12,4 @@ C:\ProjetosDeEstudo_C#\GerenciaDeBiblioteca\obj\Debug\net8.0\refint\GerenciaDeBi
 C:\ProjetosDeEstudo_C#\GerenciaDeBiblioteca\obj\Debug\net8.0\GerenciaDeBiblioteca.pdb
 C:\ProjetosDeEstudo_C#\GerenciaDeBiblioteca\obj\Debug\net8.0\GerenciaDeBiblioteca.genruntimeconfig.cache
 C:\ProjetosDeEstudo_C#\GerenciaDeBiblioteca\obj\Debug\net8.0\ref\GerenciaDeBiblioteca.dll
+C:\ProjetosDeEstudo_C#\GerenciaDeBiblioteca\obj\Debug\net8.0\GerenciaDeBiblioteca.sourcelink.json
