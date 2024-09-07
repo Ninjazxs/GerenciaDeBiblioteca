@@ -26,24 +26,12 @@ namespace GerenciamentodeBiblioteca
                 {"o longo adeus", "O longo adeus"}
             };
 
-            Livro LivrosParaInfancia = new Livro( ColecaodeLivrosInfantis);
-            Livro LivrosdeMisterio = new Livro( ColecaodeLivrosdeMisterio);
+            Livro LivrosParaInfancia = new Livro( ColecaodeLivrosInfantis, "Infantil");
+            Livro LivrosdeMisterio = new Livro( ColecaodeLivrosdeMisterio, "Misterio");
 
 
-            Menu menu = new Menu(ColecaodeLivrosInfantis, ColecaodeLivrosdeMisterio);
+            Menu menu = new Menu(ColecaodeLivrosInfantis, ColecaodeLivrosdeMisterio, "Variavel");
             menu.DrawScreen();
-
-            /*
-            LivrosParaInfancia.Emprestar(ColecaodeLivrosInfantis, "O menino maluquinho");
-            LivrosdeMisterio.Emprestar(ColecaodeLivrosdeMisterio, "Ninguem vai te ouvir gritar");
-            Console.WriteLine("\n");
-
-            Console.WriteLine("-----------------------");
-            Console.WriteLine("Livros infantis disponíveis : ");
-
-            LivrosParaInfancia.ExibirLivrosDisponiveis(ColecaodeLivrosInfantis);
-            LivrosdeMisterio.ExibirLivrosDisponiveis(ColecaodeLivrosdeMisterio);
-            */
         }
     }
 
@@ -53,9 +41,9 @@ namespace GerenciamentodeBiblioteca
 
         public List<Dictionary<string, string>> Livros {get; set;} = new List<Dictionary<string, string>>(2);
 
-        public Livro(Dictionary<string, string> livros)
+        public Livro(Dictionary<string, string> livros, string tipo)
         {
-            
+            this.TipoDoLivro = tipo;
             Livros.Add(livros);
         }
 
@@ -97,17 +85,30 @@ namespace GerenciamentodeBiblioteca
         private Dictionary<string, string> colecaodeLivrosInfantis;
         private Dictionary<string, string> colecaodeLivrosMisterio;
 
-        public Menu(Dictionary<string, string> livrosInfantis, Dictionary<string, string> livrosMisterio)
-        : base (livrosMisterio)
+        public Menu(Dictionary<string, string> livrosInfantis, Dictionary<string, string> livrosMisterio, string genero)
+        : base (livrosMisterio, genero)
         {
             this.colecaodeLivrosInfantis = livrosInfantis;
             this.colecaodeLivrosMisterio = livrosMisterio;
         }
 
+        public override void ExibirLivrosDisponiveis(Dictionary<string, string> ColecaoaserMostrada)
+        {
+            base.ExibirLivrosDisponiveis(ColecaoaserMostrada);
+        }
+
+        public override void Emprestar(Dictionary<string, string> listadeLivros, string livroAserEmprestado)
+        {
+            base.Emprestar(listadeLivros, livroAserEmprestado);
+        }
+
+        public override void Devolver(Dictionary<string, string> livros, string livroAserDevolvido)
+        {
+            base.Devolver(livros, livroAserDevolvido);
+        }
+
         public void DrawScreen()
         {
-
-
             Console.WriteLine("Seja bem-vindo a biblioteca!\n");
             Console.WriteLine("Você pode explorar livros dos gênero de Mistério e Infantis. 1: Mistério, 2: Infantis, 3: Sair\n");
             Console.WriteLine("Qual você deseja acessar?\n");
@@ -120,7 +121,7 @@ namespace GerenciamentodeBiblioteca
                     Console.Clear();
                     ExibirLivrosDisponiveis(colecaodeLivrosMisterio);
                     Console.WriteLine(" ");
-                    Console.WriteLine("Você tem gostaria de Pegar ou devolver algum livro? 1: Pegar, 2: Devolver,");
+                    Console.WriteLine("Você gostaria de Pegar ou devolver algum livro? 1: Pegar, 2: Devolver,");
                 break;
                     
                 case 2:  
@@ -140,28 +141,40 @@ namespace GerenciamentodeBiblioteca
                 break;
             }
 
-            int acaoaserExecutada = Convert.ToInt32(Console.ReadLine);
+            int acaoaserExecutada = Convert.ToInt32(Console.ReadLine());
 
             switch (acaoaserExecutada)
             {
-                case 1 :  break;
+                case 1 :
+                    if (GenerodoLivro == 1)
+                    {
+                        Console.WriteLine("Digite o nome do livro que você deseja pegar. OBS: o nome do livro deve estar correto");
+                        string livroAserEmprestado = Console.ReadLine();
+                        Emprestar(colecaodeLivrosMisterio, livroAserEmprestado);
+                    } else if (GenerodoLivro == 2)
+                    {
+                        Console.WriteLine("Digite o nome do livro que você deseja pegar. OBS: o nome do livro deve estar correto");
+                        string livroAserEmprestado = Console.ReadLine();
+                        Emprestar(colecaodeLivrosInfantis, livroAserEmprestado);
+                    } else {
+                        DrawScreen();
+                    }
+                break;
+
+                case 2: 
+                    if (GenerodoLivro == 1)
+                    {
+                        Console.WriteLine("Digite o nome do livro que você deseja devolver. OBS: o nome do livro deve estar correto");
+                        string livroAserDevolvido = Console.ReadLine().ToLower();
+                        Devolver(colecaodeLivrosMisterio, livroAserDevolvido);
+                    } else if (GenerodoLivro == 2)
+                    {
+                        Console.WriteLine("Digite o nome do livro que você deseja devolver. OBS: o nome do livro deve estar correto");
+                        string livroAserDevolvido = Console.ReadLine().ToLower();
+                        Devolver(colecaodeLivrosInfantis, livroAserDevolvido);
+                    }
+                break;
             }
         }
-
-        public override void ExibirLivrosDisponiveis(Dictionary<string, string> ColecaoaserMostrada)
-        {
-            base.ExibirLivrosDisponiveis(ColecaoaserMostrada);
-        }
-
-        public override void Emprestar(Dictionary<string, string> listadeLivros, string livroAserEmprestado)
-        {
-            base.Emprestar(listadeLivros, livroAserEmprestado);
-        }
-
-        public override void Devolver(Dictionary<string, string> livros, string livroAserDevolvido)
-        {
-            base.Devolver(livros, livroAserDevolvido);
-        }
-
     }
 }
