@@ -109,6 +109,7 @@ namespace GerenciamentodeBiblioteca
 
         public void DrawScreen()
         {
+            Console.Clear();
             Console.WriteLine("Seja bem-vindo a biblioteca!\n");
             Console.WriteLine("Você pode explorar livros dos gênero de Mistério e Infantis. 1: Mistério, 2: Infantis, 3: Sair\n");
             Console.WriteLine("Qual você deseja acessar?\n");
@@ -156,8 +157,12 @@ namespace GerenciamentodeBiblioteca
                         Console.WriteLine("Digite o nome do livro que você deseja pegar. OBS: o nome do livro deve estar correto");
                         string livroAserEmprestado = Console.ReadLine();
                         Emprestar(colecaodeLivrosInfantis, livroAserEmprestado);
-                    } else {
+                    } else if (GenerodoLivro == 3){
+                        Console.WriteLine("Voltando ...");
+                        Thread.Sleep(100);
                         DrawScreen();
+                    } else {
+                        Console.WriteLine("A ação que você selecionou não existe. Tente novamente");
                     }
                 break;
 
